@@ -1,7 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void my_ngram(int argc, char **argv);
 void enterElemsWithPrint(int *count);
+
+int main(int argc, char **argv)
+{
+    if (argc < 2)
+    {
+        printf("%s text [text2, text3]\n", argv[0]);
+        return 1;
+    }
+
+    my_ngram(argc, argv);
+
+    return 0;
+}
 
 void my_ngram(int argc, char **argv)
 {
@@ -26,17 +40,4 @@ void enterElemsWithPrint(int *count)
             printf("%c:%d\n", i, count[i]);
         }
     }
-}
-
-int main(int argc, char **argv)
-{
-    if (argc < 2)
-    {
-        printf("%s text [text2, text3]\n", argv[0]);
-        return 1;
-    }
-
-    my_ngram(argc, argv);
-
-    return 0;
 }
